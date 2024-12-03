@@ -22,3 +22,17 @@ def read_fixture(path: str) -> Generator[str, str, str]:
     fixture = pathlib.Path(__file__).parents[2] / "fixtures" / path
     with fixture.open("r", encoding="utf-8") as fp:
         yield from fp
+
+
+def extract_ints(string: str) -> tuple[int]:
+    """
+    Extracts integers out of a string that may contain multiple integers separated by
+    whitespace.
+
+    Args:
+        string (str): The string to extract ints from.
+
+    Returns:
+        tuple[int]: The ints that were extracted.
+    """
+    return tuple(int(x) for x in string.split())

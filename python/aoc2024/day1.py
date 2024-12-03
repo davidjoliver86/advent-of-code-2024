@@ -8,20 +8,6 @@ from collections.abc import Iterable
 from . import utils
 
 
-def extract_ints(string: str) -> tuple[int]:
-    """
-    Extracts integers out of a string that may contain multiple integers separated by
-    whitespace.
-
-    Args:
-        string (str): The string to extract ints from.
-
-    Returns:
-        tuple[int]: The ints that were extracted.
-    """
-    return tuple(int(x) for x in string.split())
-
-
 def make_transposed_lists(lines: Iterable[str]) -> tuple[tuple[int], tuple[int]]:
     """
     From the data provided, transpose the data such that there is one list for each
@@ -34,7 +20,7 @@ def make_transposed_lists(lines: Iterable[str]) -> tuple[tuple[int], tuple[int]]
     Returns:
         tuple[tuple[int], tuple[int]]: The transposed lists of numbers as ints.
     """
-    nums = [extract_ints(line) for line in lines]
+    nums = [utils.extract_ints(line) for line in lines]
     return tuple(zip(*nums, strict=True))
 
 
