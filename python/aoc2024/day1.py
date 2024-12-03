@@ -79,5 +79,5 @@ def second_star(fixture: str):
 
 
 if __name__ == "__main__":
-    print(first_star("real/day1-star1.txt"))
-    print(second_star("real/day1-star1.txt"))
+    print(first_star("real/day1-star1.txt"))  # pragma: no cover
+    print(second_star("real/day1-star1.txt"))  # pragma: no cover

@@ -6,7 +6,7 @@ lint:
 	ruff check
 
 test:
-	pytest
+	uv run pytest tests/ --cov=aoc2024 --cov-report=term-missing --cov-fail-under=100
 
 clean:
 	find . -type d -name __pycache__ | xargs rm -rf
